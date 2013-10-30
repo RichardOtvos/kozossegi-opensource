@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class adder</title>
+	<style>
+	.awesomeLayout{
+		width: 60%;
+		margin: 10% auto;
+		padding: 3em;
+	}
+
+	.coolBorder{
+		border: #333 dotted 2px;
+	}
+
+	.red{
+		background: red;
+	}
+
+	.blue{
+		background: blue;
+	}
+
+	.green{
+		background: green;
+	}
+
+	.yellow{
+		background: yellow;
+	}
+
+	.black{
+		background: black;
+		color: white;
+	}
+	</style>
+</head>
+<body>
+	<div id="app" class="awesomeLayout coolBorder">
+		<p>Choose a colorname type in the input and press the button.</p>
+		<p>Colors:</p>
+		<ul>
+			<li>red</li>
+			<li>blue</li>
+			<li>green</li>
+			<li>yellow</li>
+			<li>black</li>
+		</ul>
+		<input type="text" id="colorInput" placeholder="Write in a color name!">
+		<button type="button" id="colorChanger">Change the color</button>
+		
+		<script src="js/jquery.js"></script>
+		<!--<script src="js/zepto.js"></script>-->
+
+		<script>
+		$(function(){
+			$input =  $("#colorInput");
+			$button = $("#colorChanger");
+			$appDiv = $('#app');
+			// $originalAppDiv = $appDiv.clone();
+
+			$button.on('click', function(evt){
+
+				// if($appDiv[0].classList.length != 0){
+				// 	var previousClasses  = $originalAppDiv[0].classList.toString();
+				// }
+
+				var color = $input.val();
+				$appDiv.removeClass().addClass(color);
+				// $appDiv.removeClass().addClass(color).addClass(previousClasses);
+				//console.log("Cool layout bro!");
+			});
+		});
+		</script>
+</body>
+</html>
